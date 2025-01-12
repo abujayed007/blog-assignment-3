@@ -8,10 +8,8 @@ export interface TUser {
   name: string;
   email: string;
   password: string;
-  role: 'admin' | 'user';
+  role: TUserRole;
   isBlocked: boolean;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 export interface UserModel extends Model<TUser> {

@@ -8,7 +8,6 @@ import jwt from 'jsonwebtoken';
 const loginUser = async (payload: TLoginUser) => {
   // if user is exists
   const user = await User.isUserExists(payload?.email);
-  console.log(user);
 
   if (!user) {
     throw new AppError(

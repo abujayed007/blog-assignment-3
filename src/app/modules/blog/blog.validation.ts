@@ -8,7 +8,7 @@ const createBlogValidationSchema = z.object({
     author: z.string().refine((val) => Types.ObjectId.isValid(val), {
       message: 'Author must be a valid ObjectId',
     }),
-    isPublished: z.boolean(),
+    isPublished: z.boolean().optional(),
   }),
 });
 

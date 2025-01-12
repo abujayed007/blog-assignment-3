@@ -10,7 +10,7 @@ const registerUser = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: httpStatus.CREATED,
     success: true,
-    message: 'Student is created successfully',
+    message: 'User registered successfully',
     data: {
       _id: result?._id,
       name: result.name,
@@ -24,10 +24,9 @@ const updateUserIsBlocked = catchAsync(
     const { userId } = req.params;
     const result = await UserService.updateUserIsBlockedIntoDB(userId);
     sendResponse(res, {
-      statusCode: httpStatus.CREATED,
+      statusCode: httpStatus.OK,
       success: true,
       message: 'User blocked successfully',
-      data: result,
     });
   },
 );
